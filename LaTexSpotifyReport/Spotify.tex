@@ -128,16 +128,36 @@ Departure delays are greatest mid month in June. There is also an interesting os
 
 As was be expected, some airline carriers perform better in terms of departure delay performance than others.
 
+\vspace{5mm}
+I also explored the supplementary `airports.csv' file provided. For the purposes of the current project, I worked with a dataset from June 2015, and data from 2 airline carriers, \textbf{Alaska Airlines Inc}, and \textbf{Jet Blue Airways}. Together these departure delay data are presented below.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{long}
+  \caption{Longitude Data and Delays in Departure Time.}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{lat}
+  \caption{Latitude Data and Delays in Departure Time.}
+\end{subfigure}
+\caption{Longitude and Latitude Data and Delays in Departure Time.}
+\end{figure}
+
 
 
 \subsection{Hypothesis}\label{hypothesis}
-The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed to within 5 minute intervals, rather than the current 15 minute intervals. The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. 
+The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed to within 5 minute intervals, rather than the current 15 minute intervals. The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. \\
+The hypotheses were FILL IN.
+
+
 
 \section{Method}
 After exploration of the data on the U.S. DOT website data, I extracted variables of particular interest to build a predictive model of flight departure delays.
 
-\vspace{5mm}
-I also explored the supplementary `airports.csv' file provided. For the purposes of the current project, I worked with a dataset from June 2015, and data from 2 airline carriers, \textbf{Alaska Airlines Inc}, and \textbf{Jet Blue Airways}. 
+
 
 \subsection{Feature Selection}
 The possible features from the U.S. DOT website are:
@@ -176,6 +196,7 @@ In a preprocessing step, I computed a new variable to calculate a departure dela
 \end{itemize}
 
 \vspace{5mm}
+Departure Delay variances were large, and to eliminate outliers from the model, delays that were $>$600 minutes were removed (in total this summed to 4 data points).
 
 \subsection{Selecting a Model to Train}
 
