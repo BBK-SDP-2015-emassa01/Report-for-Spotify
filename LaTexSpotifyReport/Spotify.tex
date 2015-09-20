@@ -58,7 +58,7 @@
 \tableofcontents
 \clearpage
 
-\section*{Definitions}
+\section{Variable Definitions}\label{variables}
 
 \begin{tabular}{l p{11cm}  }
 Year& Year\\
@@ -89,17 +89,97 @@ Additional Comments
 
 \section{Introduction}\label{intro}
 
+Approximately x\% of flights were delayed per year according to the DOT website. The costs associated with delay are large, and it results in inconveniences to customers and loss of custom. However, the dataset at hand considers delays in 15 minute increments, i.e., a delay is coded as a `Yes' in a dataset only if the flight itself is greater than 15 minutes late. This approach does not consider the cascading effects of a shorter flight delay on subsequent connections, or the scheduled `tarmac time' for a flight upon arrival at it's destination. Since this is a real concerns for airlines and customers, the current report develops a model to predict flight delays with greater accuracy than the current data available. 
+
+\subsection{Exploration}
+I began by exploring the United States Department of Transportation (DOT) dataset (found here: http://www.rita.dot.gov/bts/press\_releases/dot075\_15). The dataset itself contains information on the variables listed in section~\ref{variables} of this report (amongst others), from 1987 to 2015 across the USA. Variables with a high percentage missing data were not included in the analysis.
+
+\vspace{5mm}
+To better understand the dataset and which features may be useful for the predictive model, I used the Data Statistics Toolbox library in MATLAB to plot the data in question. To limit the scope of the project, the month of June 2015 was considered as a subset of the larger dataset. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{departureDelayByDistanceTravelled}
+\caption{Departure Delay by Distance.}
+\label{departureDelayByDistanceTravelled}
+\end{center}
+\end{figure}
+
+As can be seen from the scatter plot, there is a large variance in the departure delay times, the variance appears to be greater for flights under 3000 miles than over 3000 miles. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{explore}
+\caption{Departure Delay by Hour, Day of Week and, Day of Month in June.}
+\label{explore}
+\end{center}
+\end{figure}
+
+We see that flights are less delayed after 8 pm and before 2 am. There is a clear pattern of increasing delay in flight departures between 5 am and 9 am, presumably because of the build up of depatures during the peak hours of the day. There is also a peak in departure delay between 3 pm and 8pm which is also in line with peak hours of the day.
+
+\vspace{5mm}
+Departure delays are most prominent early in the week (days 1 and 2), and tend to decrease on the 3-6th day of the week. The last day of the weekend on day 7, there is an increase in flight departure delays. This is what we could expect given peak travel during the weekend.
+
+\vspace{5mm}
+Departure delays are greatest mid month in June. There is also an interesting oscilating pattern in departure delays every 7 or so days. This is what we would expect given the weekend peak in travel. This is also in line with public holiday and vacation periods during June.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{departureDelayByAirline}
+\caption{Departure Delay by Airline Carrier.}
+\label{departureDelayByAirline}
+\end{center}
+\end{figure}
+
+As was be expected, some airline carriers perform better in terms of departure delay performance than others.
+
+
+
 \subsection{Hypothesis}\label{hypothesis}
+The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed to within 5 minute intervals, rather than the current 15 minute intervals. The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. 
 
 \section{Method}
+regression as I was trying to predict a continuous variable rather than a category. If I were to try and predict ontime/late I could change this to a cluster analysis\\
 
-\subsection{Exploration of data}
-First after accessing, exploring the full data set, I exracted variables of particular interest to answer my question
+missing data - did not want to impute too much - or lose too much data. This was the case for <1\% of the data as indicated on the RITA website and this was considered acceptable.\\
+
+
+
+\subsection{Feature Selection}
+
+
+Cross validation?\\
+holdout: Train and test: 70\% 30\% or less to prevent overfitting the model to the data\\
+
+First after accessing, exploring the full data set, I exracted variables of particular interest to answer my question\\
+identify outliers\\
+eliminate noise\\
+
 
 \subsection{Preprocessing the Data}
 \subsection{Training a Model}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{classifiertypes}
+\caption{Decision trees can handle a mixture of categorical and numerical data to build a model.}
+\label{classifiertypes}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{decisiontrees}
+\caption{Decision trees are fast, and complex trees have a high model flexibility.}
+\label{decisiontrees}
+\end{center}
+\end{figure}
+
+
 \subsection{Model Performance}
 \subsection{Iterations}
+
+Then use the model to predict from data.
 
 \subsubsection{Longitude and Latitude Airport Data}
 get origin (6) from feature file and look up in IATA (1) codes in airports. Then extract from airports the state, couuntry, longitude and latitude (3,4,5,6) and append it.
@@ -111,6 +191,9 @@ although i wanted to work with all the data, due to time reasons and the size of
 
 \section{Results}
 
+\subsection{Validation}
+Holdout validation was used, 80:20
+
 
 \subsection{Observations}
 flight delays happening around 4 am, need to check
@@ -121,6 +204,9 @@ flight delays happening around 4 am, need to check
 -dont have type of ticket infomration
 - size of hub can also be infered post hoc
 - dont have weather information
+- size of airline carrier = number of planes they have, number of flights on same day/flight numbers.
+-working with large datasets but with greater computing power could do these types of analyses for the entire year and include month as a predictor variable into the model.\\
+-could look at flight delays during more and less busy periods, around holidays etc.\\
 
 
 
