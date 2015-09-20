@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Introduction}{5}
+\contentsline {subsection}{\numberline {1.1}Hypothesis}{5}
+\contentsline {section}{\numberline {2}Method}{5}
+\contentsline {subsection}{\numberline {2.1}Exploration of data}{5}
+\contentsline {subsection}{\numberline {2.2}Preprocessing the Data}{5}
+\contentsline {subsection}{\numberline {2.3}Training a Model}{5}
+\contentsline {subsection}{\numberline {2.4}Model Performance}{5}
+\contentsline {subsection}{\numberline {2.5}Iterations}{5}
+\contentsline {subsubsection}{\numberline {2.5.1}Longitude and Latitude Airport Data}{5}
+\contentsline {section}{\numberline {3}Results}{5}
+\contentsline {subsection}{\numberline {3.1}Observations}{5}
+\contentsline {section}{\numberline {4}Evaluation}{5}

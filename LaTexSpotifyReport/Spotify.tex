@@ -1,0 +1,135 @@
+\documentclass[a4paper, 11pt]{article}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{.1in}
+\setlength{\textwidth}{6in}
+
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{array}
+\usepackage[document]{ragged2e}
+\usepackage{comment} 
+\usepackage{subcaption}
+\usepackage{amssymb,amsmath}
+\usepackage[font={small,it}]{caption}
+
+\usepackage{datetime}
+\usepackage{tgbonum}
+
+\newdateformat{mydate}{\monthname[\THEMONTH] \THEYEAR}
+
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\begin{document}
+
+
+\LARGE\title{Predicting Flight Delays With Increased Accuracy.}
+
+\LARGE\author{\textbf{Esha Massand}\\
+\date{\mydate\today}
+\\\
+}
+
+\normalsize
+
+
+\maketitle
+
+
+\section*{Abstract}
+\begin{justify}
+
+\end{justify}
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
+
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\section*{Definitions}
+
+\begin{tabular}{l p{11cm}  }
+Year& Year\\
+Quarter& Quarter (1-4)\\
+Month& Month\\
+DayofMonth& Day of Month\\
+DayOfWeek& Day of Week\\
+Carrier& Code assigned by IATA and commonly used to identify a carrier. As the same code may have been assigned to different carriers over time, the code is not always unique. For analysis, use the Unique Carrier Code\\
+FlightNum& Flight Number\\
+Origin& Origin Airport\\
+Dest& Destination Airport\\
+DepTime& Actual Departure Time (local time: hhmm)\\
+DepDelay& Difference in minutes between scheduled and actual departure time. Early departures show negative numbers\\
+DepDelay\_5min\_intervals & Departure Delay Indicator using 5 minute increments\\
+DepDel15& Departure Delay Indicator, 15 Minutes or More (1=Yes)\\
+Distance& Distance between airports (miles)\\
+\end{tabular}
+
+\clearpage
+
+Approach, Use of Hypothesis ? Worth 30\% of score
+Quality of Technique ? Worth 29\% of score
+Creativity ? Worth 30\% of score
+Presentation and Polish ? Worth 10\% of score
+Should this candidate move on to the next hiring stage? ? Worth 1\% of score
+Additional Comments
+\clearpage
+
+\section{Introduction}\label{intro}
+
+\subsection{Hypothesis}\label{hypothesis}
+
+\section{Method}
+
+\subsection{Exploration of data}
+First after accessing, exploring the full data set, I exracted variables of particular interest to answer my question
+
+\subsection{Preprocessing the Data}
+\subsection{Training a Model}
+\subsection{Model Performance}
+\subsection{Iterations}
+
+\subsubsection{Longitude and Latitude Airport Data}
+get origin (6) from feature file and look up in IATA (1) codes in airports. Then extract from airports the state, couuntry, longitude and latitude (3,4,5,6) and append it.
+
+after the initial analyses, i went on to integrate more data into the model, including data on longitude and latitude of the airports to see if they could explain any more variance of the data
+
+although i wanted to work with all the data, due to time reasons and the size of the large datasets, I had to restrict some of the analyses. i focused on for the longitude and latitude analysis only one airline - the AS airline.
+
+
+\section{Results}
+
+
+\subsection{Observations}
+flight delays happening around 4 am, need to check
+- shift change?
+- no flights happening around that time?
+
+\section{Evaluation}
+-dont have type of ticket infomration
+- size of hub can also be infered post hoc
+- dont have weather information
+
+
+
+\clearpage
+\begin{thebibliography}{100}
+\end{thebibliography}
+
+\newpage
+\section*{Appendices}
+
+
+\end{document} 
