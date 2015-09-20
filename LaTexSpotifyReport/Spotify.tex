@@ -197,26 +197,24 @@ In a preprocessing step, I computed a new variable to calculate a departure dela
 
 A decision tree was selected as an appropriate model for the dataset because this type of model can handle a mixture of categorical and numerical data, and complex trees have a high model flexibility.
 
+\subsection{Model Training}
+There were 11548 observations in the dataset with 13 predictors (listed above). The response variable was `departure delay in 5 minute intervals', which had 7 response classes. The code for the model can be seen in the appendix (\ref{codeComplex}).
+
 \subsection{Model Performance: Iterations}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.45]{3models}
+\includegraphics[scale=0.3]{3models}
 \caption{Three iterations of the model were run; simple, medium and complex.}
 \label{3models}
 \end{center}
 \end{figure}
 
 
-The model that yielded greatest accuracy were the medium and complex decision trees, both yielding 99.3\% accuracy using 13 features listed above.
+The model that yielded greatest accuracy were the medium and complex decision trees, both yielding 99.3\% accuracy using 13 features listed above. Several other iterations of the model were run, but for brevity only these three are reported (for the remaining iterations and my workings for the current report please see: https://github.com/BBK-SDP-2015-emassa01/Report-for-Spotify).
 
-\subsubsection{Longitude and Latitude Airport Data}
-get origin (6) from feature file and look up in IATA (1) codes in airports. Then extract from airports the state, couuntry, longitude and latitude (3,4,5,6) and append it.
-
-after the initial analyses, i went on to integrate more data into the model, including data on longitude and latitude of the airports to see if they could explain any more variance of the data
-
-although i wanted to work with all the data, due to time reasons and the size of the large datasets, I had to restrict some of the analyses. i focused on for the longitude and latitude analysis only one airline - the AS airline.
-
+\vspace{5mm}
+The confusion matrix shows that the model works very well for 6 out of the 7 categories. The model has difficulty with flights that left `onTime', i.e., within 5 minutes of scheduled departure. The model tends to class these flights as `early' or `greater than 15 minutes late', so further refinement of the model is necessary. Perhaps with a larger data set.
 
 \section{Results}
 
