@@ -198,7 +198,7 @@ In a preprocessing step, I computed a new variable to calculate a departure dela
 A decision tree was selected as an appropriate model for the dataset because this type of model can handle a mixture of categorical and numerical data, and complex trees have a high model flexibility.
 
 \subsection{Model Training}
-There were 11548 observations in the dataset with 13 predictors (listed above). The response variable was `departure delay in 5 minute intervals', which had 7 response classes. The code for the model can be seen in the appendix (\ref{codeComplex}).
+There were 11548 observations in the dataset with 13 predictors (listed above). The response variable was `departure delay in 5 minute intervals', which had 7 response classes. The MATLAB code for training the model can be seen in my GitHub repository here: https://github.com/BBK-SDP-2015-emassa01/Report-for-Spotify under the \texttt{longlat data} folder and in the \texttt{trainClassifierComplex.m} file).
 
 \subsection{Model Performance: Iterations}
 
@@ -211,14 +211,12 @@ There were 11548 observations in the dataset with 13 predictors (listed above). 
 \end{figure}
 
 
-The model that yielded greatest accuracy were the medium and complex decision trees, both yielding 99.3\% accuracy using 13 features listed above. Several other iterations of the model were run, but for brevity only these three are reported (for the remaining iterations and my workings for the current report please see: https://github.com/BBK-SDP-2015-emassa01/Report-for-Spotify).
+I used the classificationLearner MATLAB application to run the models. The model that yielded greatest accuracy were the medium and complex decision trees, both yielding 99.3\% accuracy using 13 features listed above. Several other iterations of the model were run, but for brevity only these three are reported (for the remaining iterations and my workings for the current report please see: https://github.com/BBK-SDP-2015-emassa01/Report-for-Spotify).
 
 \vspace{5mm}
 The confusion matrix shows that the model works very well for 6 out of the 7 categories. The model has difficulty with flights that left `onTime', i.e., within 5 minutes of scheduled departure. The model tends to class these flights as `early' or `greater than 15 minutes late', so further refinement of the model is necessary. Perhaps with a larger data set.
 
-\section{Results}
-
-\subsection{Validation}
+\subsection{Validation Criteria}
 Holdout validation was used, 80:20\\
 Cross validation?\\
 holdout: Train and test: 70\% 30\% or less to prevent overfitting the model to the data\\
@@ -229,7 +227,7 @@ flight delays happening around 4 am, need to check
 - shift change?
 - no flights happening around that time?
 
-\section{Evaluation}
+\section{Conclusion}
 -dont have type of ticket infomration
 - size of hub can also be infered post hoc
 - dont have weather information
