@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.23)  20 SEP 2015 18:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.23)  20 SEP 2015 22:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -380,109 +380,106 @@ ify.toc)
 [2
 
 ]
-Overfull \hbox (36.23827pt too wide) in paragraph at lines 63--79
+Overfull \hbox (24.71014pt too wide) in paragraph at lines 63--82
 []  
  []
 
 [3
 
-] [4
-
 ]
-Overfull \hbox (12.15344pt too wide) in paragraph at lines 95--96
-\OT1/qbk/m/n/10.95 I be-gan by ex-plor-ing the United States De-part-ment of Tr
-ans-porta-tion (DOT) dataset 
+Overfull \hbox (7.82932pt too wide) in paragraph at lines 90--91
+\OT1/qbk/m/n/10 I be-gan by ex-plor-ing the United States De-part-ment of Trans
+-porta-tion (DOT) dataset (found 
  []
 
 
-Overfull \hbox (3.7658pt too wide) in paragraph at lines 95--96
-\OT1/qbk/m/n/10.95 (found here: http://www.rita.dot.gov/bts/press[]releases/dot
-075[]15). The dataset 
- []
-
-
-Overfull \hbox (20.3112pt too wide) in paragraph at lines 95--96
-\OT1/qbk/m/n/10.95 it-self con-tains in-for-ma-tion on the vari-ables listed in
- sec-tion 1[] of this re-port (amongst 
- []
-
-
-<images/departureDelayByDistanceTravelled.png, id=17, 492.84125pt x 365.365pt>
+<images/departureDelayByDistanceTravelled.png, id=14, 492.84125pt x 365.365pt>
 File: images/departureDelayByDistanceTravelled.png Graphic file (type png)
 
 <use images/departureDelayByDistanceTravelled.png>
 Package pdftex.def Info: images/departureDelayByDistanceTravelled.png used on i
-nput line 102.
+nput line 97.
 (pdftex.def)             Requested size: 246.42001pt x 182.68205pt.
- [5
 
- <./images/departureDelayByDistanceTravelled.png (PNG copy)>]
-<images/explore.png, id=22, 722.7pt x 542.025pt>
+<images/explore.png, id=15, 722.7pt x 542.025pt>
 File: images/explore.png Graphic file (type png)
  <use images/explore.png>
-Package pdftex.def Info: images/explore.png used on input line 112.
+Package pdftex.def Info: images/explore.png used on input line 107.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 
-<images/departureDelayByAirline.png, id=24, 407.5225pt x 353.32pt>
+[4
+
+ <./images/departureDelayByDistanceTravelled.png (PNG copy)>]
+<images/departureDelayByAirline.png, id=21, 407.5225pt x 353.32pt>
 File: images/departureDelayByAirline.png Graphic file (type png)
 
 <use images/departureDelayByAirline.png>
 Package pdftex.def Info: images/departureDelayByAirline.png used on input line 
-128.
+123.
 (pdftex.def)             Requested size: 203.76074pt x 176.65956pt.
- [6 <./images/explore.png>] [7 <./images/departureDelayByAirline.png (PNG copy)
->]
-<images/classifiertypes.png, id=33, 999.735pt x 155.58125pt>
+ [5 <./images/explore.png>]
+LaTeX Font Info:    Try loading font information for OMS+qbk on input line 145.
+
+LaTeX Font Info:    No file OMSqbk.fd. on input line 145.
+
+
+LaTeX Font Warning: Font shape `OMS/qbk/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 145.
+
+[6 <./images/departureDelayByAirline.png (PNG copy)>]
+<images/classifiertypes.png, id=30, 999.735pt x 155.58125pt>
 File: images/classifiertypes.png Graphic file (type png)
 
 <use images/classifiertypes.png>
-Package pdftex.def Info: images/classifiertypes.png used on input line 164.
-(pdftex.def)             Requested size: 499.86627pt x 77.79042pt.
+Package pdftex.def Info: images/classifiertypes.png used on input line 184.
+(pdftex.def)             Requested size: 449.87659pt x 70.01091pt.
 
-Overfull \hbox (66.24628pt too wide) in paragraph at lines 164--165
+Overfull \hbox (16.25659pt too wide) in paragraph at lines 184--185
  [] 
  []
 
-<images/decisiontrees.png, id=34, 999.735pt x 253.94875pt>
+[7] <images/decisiontrees.png, id=36, 999.735pt x 253.94875pt>
 File: images/decisiontrees.png Graphic file (type png)
 
 <use images/decisiontrees.png>
-Package pdftex.def Info: images/decisiontrees.png used on input line 172.
-(pdftex.def)             Requested size: 499.86627pt x 126.97406pt.
+Package pdftex.def Info: images/decisiontrees.png used on input line 192.
+(pdftex.def)             Requested size: 449.87659pt x 114.27588pt.
 
-Overfull \hbox (66.24628pt too wide) in paragraph at lines 172--173
+Overfull \hbox (16.25659pt too wide) in paragraph at lines 192--193
  [] 
  []
 
-[8 <./images/classifiertypes.png> <./images/decisiontrees.png>]
-Overfull \hbox (5.27692pt too wide) in paragraph at lines 204--208
-\OT1/qbk/m/n/10.95 have, num-ber of flights on same day/flight num-bers. -worki
-ng with large datasets 
+
+Overfull \hbox (0.62933pt too wide) in paragraph at lines 210--211
+[]\OT1/qbk/m/n/10 although i wanted to work with all the data, due to time rea-
+sons and the size of the large 
  []
 
-[9]
+[8 <./images/classifiertypes.png> <./images/decisiontrees.png>] [9]
+(./Spotify.aux)
 
-LaTeX Warning: Empty `thebibliography' environment on input line 215.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-[10
-
-] [11] (./Spotify.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 4911 strings out of 493117
- 72291 string characters out of 6135433
- 137419 words of memory out of 5000000
- 8250 multiletter control sequences out of 15000+600000
- 37926 words of font info for 48 fonts, out of 8000000 for 9000
+ 4924 strings out of 493117
+ 72382 string characters out of 6135433
+ 138398 words of memory out of 5000000
+ 8259 multiletter control sequences out of 15000+600000
+ 47449 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,8n,40p,1009b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/tex
--gyre/q-rm.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/
-qbkb.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qbkr.p
-fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qbkri.pfb>
-Output written on Spotify.pdf (11 pages, 231002 bytes).
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}</usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qbkb.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/tex-gyre/qbkr.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/tex-gyre/qbkri.pfb>
+Output written on Spotify.pdf (9 pages, 247241 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

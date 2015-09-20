@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 10pt]{article}
 \setlength{\topmargin}{0in}
 \setlength{\textheight}{8in}
 \setlength{\oddsidemargin}{.1in}
@@ -42,7 +42,7 @@
 
 \section*{Abstract}
 \begin{justify}
-
+The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed to within 5 minute intervals, rather than the current 15 minute intervals. The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. 
 \end{justify}
 \begin{verbatim}
 
@@ -72,19 +72,14 @@ Origin& Origin Airport\\
 Dest& Destination Airport\\
 DepTime& Actual Departure Time (local time: hhmm)\\
 DepDelay& Difference in minutes between scheduled and actual departure time. Early departures show negative numbers\\
-DepDelay\_5min\_intervals & Departure Delay Indicator using 5 minute increments\\
+DepDelay\_5min\_intervals & Departure Delay Indicator in 5 minute intervals. Early departures are also represented in this categorical variable\\
 DepDel15& Departure Delay Indicator, 15 Minutes or More (1=Yes)\\
 Distance& Distance between airports (miles)\\
+State & State\\
+Latitude & Latitude of State\\
+Longitude & Longitude of State\\
 \end{tabular}
 
-\clearpage
-
-Approach, Use of Hypothesis ? Worth 30\% of score
-Quality of Technique ? Worth 29\% of score
-Creativity ? Worth 30\% of score
-Presentation and Polish ? Worth 10\% of score
-Should this candidate move on to the next hiring stage? ? Worth 1\% of score
-Additional Comments
 \clearpage
 
 \section{Introduction}\label{intro}
@@ -105,7 +100,7 @@ To better understand the dataset and which features may be useful for the predic
 \end{center}
 \end{figure}
 
-As can be seen from the scatter plot, there is a large variance in the departure delay times, the variance appears to be greater for flights under 3000 miles than over 3000 miles. 
+As can be seen from the scatter plot, there is a large variance in the departure delay times, the variance appears to be greater for flights under 3000 miles than over 3000 miles \footnote{To determine whether these data points were true outliers, a larger analysis over multiple years and months should be carried out. It would otherwise be difficult to determine whether or not these high variances were meaningful (and important for the model to account for), or spurious.}. 
 
 \begin{figure}[H]
 \begin{center}
@@ -139,29 +134,54 @@ As was be expected, some airline carriers perform better in terms of departure d
 The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed to within 5 minute intervals, rather than the current 15 minute intervals. The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. 
 
 \section{Method}
-regression as I was trying to predict a continuous variable rather than a category. If I were to try and predict ontime/late I could change this to a cluster analysis\\
+After exploration of the data on the U.S. DOT website data, I extracted variables of particular interest to build a predictive model of flight departure delays.
 
-missing data - did not want to impute too much - or lose too much data. This was the case for <1\% of the data as indicated on the RITA website and this was considered acceptable.\\
-
-
+\vspace{5mm}
+I also explored the supplementary `airports.csv' file provided. For the purposes of the current project, I worked with a dataset from June 2015, and data from 2 airline carriers, \textbf{Alaska Airlines Inc}, and \textbf{Jet Blue Airways}. 
 
 \subsection{Feature Selection}
+The possible features from the U.S. DOT website are:
+\begin{itemize}
+\item{Day of Month}
+\item{Day of Week}
+\item{Carrier}
+\item{Flight Number}
+\item{Origin}
+\item{Destination}
+\item{Departure Time}
+\item{Departure Delay in Minutes}
+\item{Distance between Origin and Destination}
+\end{itemize}
 
+The features that were extracted from the airports.csv file, and combined to the dataset from the U.S. DOT website were:
+\begin{itemize}
+\item{State}
+\item{Latitude}
+\item{Longitude}
+\end{itemize}
 
-Cross validation?\\
-holdout: Train and test: 70\% 30\% or less to prevent overfitting the model to the data\\
-
-First after accessing, exploring the full data set, I exracted variables of particular interest to answer my question\\
-identify outliers\\
-eliminate noise\\
-
+\vspace{5mm}
+These features formed the predictors for the model. Missing data for these features was $<$0.005\%. Any data rows with missing data were excluded from training and testing the model. 
 
 \subsection{Preprocessing the Data}
-\subsection{Training a Model}
+In a preprocessing step, I computed a new variable to calculate a departure delay in 5 minute intervals, with early departures also being represented in a categorical variable called `DepDelay\_5min\_intervals'. This was the response feature for the model. There were 7 unique levels to the categorical variable and these were:
+\begin{itemize}
+\item{departed\_early\_greaterThan\_15}
+\item{departed\_early\_10}
+\item{departed\_early\_5}
+\item{onTime}
+\item{departed\_late\_5}
+\item{departed\_late\_10}
+\item{departed\_late\_greaterThan\_15}
+\end{itemize}
+
+\vspace{5mm}
+
+\subsection{Selecting a Model to Train}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{classifiertypes}
+\includegraphics[scale=0.45]{classifiertypes}
 \caption{Decision trees can handle a mixture of categorical and numerical data to build a model.}
 \label{classifiertypes}
 \end{center}
@@ -169,17 +189,26 @@ eliminate noise\\
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{decisiontrees}
+\includegraphics[scale=0.45]{decisiontrees}
 \caption{Decision trees are fast, and complex trees have a high model flexibility.}
 \label{decisiontrees}
 \end{center}
 \end{figure}
 
+A decision tree was selected as an appropriate model for the dataset because this type of model can handle a mixture of categorical and numerical data, and complex trees have a high model flexibility.
 
-\subsection{Model Performance}
-\subsection{Iterations}
+\subsection{Model Performance: Iterations}
 
-Then use the model to predict from data.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.45]{3models}
+\caption{Three iterations of the model were run; simple, medium and complex.}
+\label{3models}
+\end{center}
+\end{figure}
+
+
+The model that yielded greatest accuracy were the medium and complex decision trees, both yielding 99.3\% accuracy using 13 features listed above.
 
 \subsubsection{Longitude and Latitude Airport Data}
 get origin (6) from feature file and look up in IATA (1) codes in airports. Then extract from airports the state, couuntry, longitude and latitude (3,4,5,6) and append it.
@@ -192,7 +221,9 @@ although i wanted to work with all the data, due to time reasons and the size of
 \section{Results}
 
 \subsection{Validation}
-Holdout validation was used, 80:20
+Holdout validation was used, 80:20\\
+Cross validation?\\
+holdout: Train and test: 70\% 30\% or less to prevent overfitting the model to the data\\
 
 
 \subsection{Observations}
@@ -207,15 +238,6 @@ flight delays happening around 4 am, need to check
 - size of airline carrier = number of planes they have, number of flights on same day/flight numbers.
 -working with large datasets but with greater computing power could do these types of analyses for the entire year and include month as a predictor variable into the model.\\
 -could look at flight delays during more and less busy periods, around holidays etc.\\
-
-
-
-\clearpage
-\begin{thebibliography}{100}
-\end{thebibliography}
-
-\newpage
-\section*{Appendices}
 
 
 \end{document} 

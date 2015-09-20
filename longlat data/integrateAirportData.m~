@@ -1,0 +1,8 @@
+for i=1: height(SELECTEDJunefeatures5minutedelayintervals)
+    origin = SELECTEDJunefeatures5minutedelayintervals(i,6);
+    for j = 1: height(airports)
+        if
+        end;
+        
+    end;
+end;
