@@ -42,16 +42,8 @@
 
 \section*{Abstract}
 \begin{justify}
-The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed to within 5 minute intervals, rather than the current 15 minute intervals. The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. 
+The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed. The model is 99.3\% predictive to within 5 minute intervals (rather than 15 minute intervals). The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. 
 \end{justify}
-\begin{verbatim}
-
-
-
-
-
-
-\end{verbatim}
 
 
 \clearpage
@@ -84,7 +76,7 @@ Longitude & Longitude of State\\
 
 \section{Introduction}\label{intro}
 
-Approximately x\% of flights were delayed per year according to the DOT website. The costs associated with delay are large, and it results in inconveniences to customers and loss of custom. However, the dataset at hand considers delays in 15 minute increments, i.e., a delay is coded as a `Yes' in a dataset only if the flight itself is greater than 15 minutes late. This approach does not consider the cascading effects of a shorter flight delay on subsequent connections, or the scheduled `tarmac time' for a flight upon arrival at it's destination. Since this is a real concerns for airlines and customers, the current report develops a model to predict flight delays with greater accuracy than the current data available. 
+Approximately 22.5\% of flights were delayed in 2014 according to the U.S. Department of Transport (DOT). Large costs are associated with flight delays.  Delay also results in large inconveniences to customers and potential loss of their custom. The dataset at hand considers delay in 15 minute increments; a delay is recorded in the dataset only if the flight incurs a delay of greater than 15 minutes. When using these data in predictive modeling, I argue that this is not an accurate enough time-resolution. This approach does not consider the cascading effects of a shorter flight delay on subsequent connections, or the scheduled `tarmac time' for a flight upon arrival at it's destination. Since this is a real concerns for airlines and customers, the current report develops a model to predict flight delays with greater accuracy building on the current data that are available. 
 
 \subsection{Exploration}
 I began by exploring the United States Department of Transportation (DOT) dataset (found here: http://www.rita.dot.gov/bts/press\_releases/dot075\_15). The dataset itself contains information on the variables listed in section~\ref{variables} of this report (amongst others), from 1987 to 2015 across the USA. Variables with a high percentage missing data were not included in the analysis.
@@ -251,17 +243,20 @@ Five-fold cross validation was used to prevent overfitting the model to the data
 
 
 \subsection{Observations}
-flight delays happening around 4 am, need to check
-- shift change?
-- no flights happening around that time?
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.45]{4am}
+\caption{Reduction in number of flights departing prior to 5 am.}
+\label{4am}
+\end{center}
+\end{figure}
+Whilst exploring the data, it became apparent that there are a reduced number of flights departing airports prior to 5 am. It is possible that this is due to scheduled staff shift-changes during these hours. These hours are not representative of the entire day's data. The data from this period of the day however, feed into the model generated and so may dilute the predictive power of the model. If I were to generate future models, I would focus on data gathered from around the same time of the day across multiple days to generate better models with greater predictive power.
 
 \section{Conclusion}
--dont have type of ticket infomration
-- size of hub can also be infered post hoc
-- dont have weather information
-- size of airline carrier = number of planes they have, number of flights on same day/flight numbers.
--working with large datasets but with greater computing power could do these types of analyses for the entire year and include month as a predictor variable into the model.\\
--could look at flight delays during more and less busy periods, around holidays etc.\\
+When working through the dataset, there were several variables that I thought would assist with my research questions.  For example, gathering information about the size of the airport, and whether passengers were likely to be making a connection or not. Even small delays are, of course, more of a concern when having to make a connection. 
 
+\vspace{5mm}
+Weather information, or information pertaining to the cause of the delay was in most cases missing (90.14\%). However, weather information is a factor that would significantly impact trends in data gathered between summer and winter months. 
 
 \end{document} 
