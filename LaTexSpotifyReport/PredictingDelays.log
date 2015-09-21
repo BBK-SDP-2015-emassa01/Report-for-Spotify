@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.23)  21 SEP 2015 02:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.23)  21 SEP 2015 02:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Spotify.tex
-(./Spotify.tex
+**PredictingDelays.tex
+(./PredictingDelays.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
@@ -289,8 +289,8 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-(./Spotify.aux)
-\openout1 = `Spotify.aux'.
+(./PredictingDelays.aux)
+\openout1 = `PredictingDelays.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
@@ -371,13 +371,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 40.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Spot
-ify.toc)
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./PredictingDelays.toc)
 \tf@toc=\write4
-\openout4 = `Spotify.toc'.
+\openout4 = `PredictingDelays.toc'.
 
-
-[2
+ [2
 
 ]
 Overfull \hbox (24.71014pt too wide) in paragraph at lines 55--74
@@ -488,19 +487,19 @@ File: images/4am.png Graphic file (type png)
 Package pdftex.def Info: images/4am.png used on input line 252.
 (pdftex.def)             Requested size: 373.09044pt x 222.67989pt.
 
-[11 <./images/4am.png>] [12] (./Spotify.aux)
+[11 <./images/4am.png>] [12] (./PredictingDelays.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
  4952 strings out of 493117
- 72880 string characters out of 6135433
+ 72979 string characters out of 6135433
  140417 words of memory out of 5000000
  8283 multiletter control sequences out of 15000+600000
  47449 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,8n,40p,1009b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,8n,40p,1018b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}</usr/l
 ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
 cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
@@ -508,7 +507,7 @@ al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/loca
 l/texlive/2014/texmf-dist/fonts/type1/public/tex-gyre/qbkb.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/tex-gyre/qbkr.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/public/tex-gyre/qbkri.pfb>
-Output written on Spotify.pdf (12 pages, 530972 bytes).
+Output written on PredictingDelays.pdf (12 pages, 530972 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
