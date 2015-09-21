@@ -128,39 +128,47 @@ Departure delays are greatest mid month in June. There is also an interesting os
 
 As was be expected, some airline carriers perform better in terms of departure delay performance than others.
 
-\vspace{5mm}
-I also explored the supplementary `airports.csv' file provided. For the purposes of the current project, I worked with a dataset from June 2015, and data from 2 airline carriers, \textbf{Alaska Airlines Inc}, and \textbf{Jet Blue Airways}. Together these departure delay data are presented below.
+\clearpage
+To enrich the model with more data, I also explored the supplementary `airports.csv' file which included data on longitude and latitude of airports in the dataset. For the purposes of the current project, I focused on a smaller dataset from June 2015, and data from 2 airline carriers, \textbf{Alaska Airlines Inc}, and \textbf{Jet Blue Airways}. Together these departure delay data and airport coordinate data are presented below.
 
 \begin{figure}[H]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{long}
+\begin{subfigure}{.6\textwidth}
+  \includegraphics[width=.8\linewidth]{long2}
   \caption{Longitude Data and Delays in Departure Time.}
 \end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.7\linewidth]{lat}
+\begin{subfigure}{.6\textwidth}
+  \includegraphics[width=.8\linewidth]{lat2}
   \caption{Latitude Data and Delays in Departure Time.}
 \end{subfigure}
-\caption{Longitude and Latitude Data and Delays in Departure Time.}
 \end{figure}
 
-
+As can be seen, there is a lot of variation in departure delays from the west coast (-180 longitude) to the east coast (-60 longitude) of the united states, with greater departure delays from central US, and east US. It is possible that this is because the east (New York, JFK for example) and regions in central US are `hubs' for travellers, attracting a greater volume of customers. There is also a wide variation in delays from the north (70) to southern parts (20) of the United States, with most delays originating from regions closer to the equator, presumably due to higher traffic compared to regions of greater latitude.
 
 \subsection{Hypothesis}\label{hypothesis}
 The aim of the current project was to develop a model which could predict with high accuracy whether a flight departure would be delayed to within 5 minute intervals, rather than the current 15 minute intervals. The proposed purpose of the work would be to reduce costs associated with delays and increase customer satisfaction by providing more accurate information about flight schedules. \\
-The hypotheses were FILL IN.
+The hypotheses for each variable were as follows:\\
+
+\begin{tabular}{l p{11cm}  }
+Day of month & The pattern should oscillate from low to high delays every 5-7 days to reflect weekend versus weekday. For certain months of the year, this may show a clearer pattern.\\
+Day of week & Weekends are busier than weekdays\\
+Hour of day & Flights during peak hours are busier than off peak hours\\
+Carrier & Some carriers perform better than others\\
+Flight Number & Certain flight numbers may be prone to delays due to inefficient scheduling by airlines\\
+Origin & Some origin airports may perform better than others at getting flights to take off\\
+Destination & Some destination airports may perform better than others with communicaton, having cascading effects on departure delays at the departure airport. \\
+Departure Time & Some times of the day are busier than others\\
+Distance & Flights that are further away have shorter delays\\
+Latitude & Flights departing from areas closer to the equator have greater traffic volunes compared to regions much further north and consequently, will have greater delays\\
+Longitude & Flights departing at an airport `hub' will have greater delays
+\end{tabular}
 
 
 
 \section{Method}
-After exploration of the data on the U.S. DOT website data, I extracted variables of particular interest to build a predictive model of flight departure delays.
-
-
+After exploration of the data on the U.S. DOT website data, I extracted variables of particular interest to build a predictive model of flight departure delays. The procedure to implement the model including loading in the June 2015 dataset, filtering out flights that were not carried by \textbf{Alaska Airlines Inc} or \textbf{Jet Blue Airways}, deleting outliers for departure delays, and projecting only variables that were useful predictors, or responses in the analysis. The feature selection process is explained next.
 
 \subsection{Feature Selection}
-The possible features from the U.S. DOT website are:
+The possible features from U.S. DOT are:
 \begin{itemize}
 \item{Day of Month}
 \item{Day of Week}
@@ -173,7 +181,7 @@ The possible features from the U.S. DOT website are:
 \item{Distance between Origin and Destination}
 \end{itemize}
 
-The features that were extracted from the airports.csv file, and combined to the dataset from the U.S. DOT website were:
+The features that were extracted from the airports.csv file, and combined to the dataset gathered from the U.S. DOT website were:
 \begin{itemize}
 \item{State}
 \item{Latitude}
@@ -238,9 +246,8 @@ I used the classificationLearner MATLAB application to run the models. The model
 The confusion matrix shows that the model works very well for 6 out of the 7 categories. The model has difficulty with flights that left `onTime', i.e., within 5 minutes of scheduled departure. The model tends to class these flights as `early' or `greater than 15 minutes late', so further refinement of the model is necessary. Perhaps with a larger data set.
 
 \subsection{Validation Criteria}
-Holdout validation was used, 80:20\\
-Cross validation?\\
-holdout: Train and test: 70\% 30\% or less to prevent overfitting the model to the data\\
+Five-fold cross validation was used to prevent overfitting the model to the data, and to give an honest assessment of the true accuracy of the system. The purpose of cross validation is to ensure a diverse and more representative validation set to test the model. 
+
 
 
 \subsection{Observations}
